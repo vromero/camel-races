@@ -1,0 +1,82 @@
+</body>
+</html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>CamelRaces the online camel racing experience</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link href="stylesheets/theme/desert/desert.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div class="bg">
+			<div id="header">
+				<div id="logo">
+					<h1><a href="#">Camel Races</a></h1>
+					<h2><a href="#">now with Camels!</a></h2>
+				</div>
+				<div id="menu">
+					<h2>Navigation Menu</h2>
+					<ul>
+						<li>
+							<a href="{{ url }}">{{ url_linktext }}</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="wrapper">
+				<div id="content">
+					<div id="splash">
+						<div class="top"><img src="images/theme/desert/img07.jpg" alt="" width="460" height="180" />
+						</div>
+						<div class="bottom"></div>
+					</div>
+					<div id="welcome">
+						<h2>Create your own race!</h2>
+						
+						{% if logged %}
+						<p>
+							<form action="/race" method="post">
+								<div>
+									Name :
+									<input type="text" name="name" rows="3" cols="60"/>
+								</div>
+								<div>
+									<br/>
+									Description :
+									<input type="text" name="description" rows="3" cols="60"/>
+								</div>
+								<div>
+									<br/>
+									<input type="submit" value="Create Race">
+								</div>
+							</form>
+						</p>
+						{% else %}
+						<p>
+							You need to <a href="{{ url }}">log in</a> to create races.
+						</p>
+						{% endif %}
+						
+					</div>
+				</div>
+				<div id="sidebar">
+					<h3 class="title">Instructions</h3>
+					<div class="content">
+						<p>
+							To play you need to start a game using the form that you will find at the right. Or receive a url link to a race already created by another player.
+						</p>
+					</div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+			<div id="footer">
+				<p>
+					<br />
+					<br />
+					&copy;2011 Calamidad. All Rights Reserved.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

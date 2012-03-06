@@ -1,0 +1,68 @@
+</body>
+</html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>CamelRaces - {{ race_name }}</title>
+		<link href="/stylesheets/main.css" rel="stylesheet" type="text/css" />
+		<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/scripts/jquery.blockUI.js?v2.31"></script>
+		<script type="text/javascript" src="/_ah/channel/jsapi"></script>
+		<script type="text/javascript" src="/scripts/ready_panel.js"></script>
+		<script type="text/javascript" src="/scripts/minigame/main.js"></script>
+		<script type="text/javascript" src="/scripts/racecourse.js"></script>
+		<script type="text/javascript" src="/scripts/race.js"></script>
+		<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'5d9c8c50-28d3-4083-96f4-2b0167ae977a'});</script>
+		<script type="text/javascript" src="/scripts/jquery.transform-0.9.3.min.js"></script>
+		<link href="/stylesheets/minigame/main.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<script>
+		var race_key = "{{ race_key }}";
+		var runner_key = "{{ runner_key }}";
+		var channel_token = "{{channel_token}}";
+		var race_status = "{{ race_status }}";
+		var runner_ready;
+		if ("{{ runner_ready }}" == "true") {
+			runner_ready = true;
+		} else {
+			runner_ready = false;
+		}
+	</script>
+	
+	<body>
+		<div id="countdown"></div>
+		
+		<div id="header_bar">
+			<div id="race_meta">
+				<div id="race_name">{{ race_name }}</div>
+				<div id="race_description">{{ race_description }}</div>
+			</div>
+			<div id="share_button" ></div>
+		</div>
+		
+		<div id="controlzone">
+			<div id="ready_panel">You are ready.<br/>Click here to change.</div>
+			<div id="unready_panel">You are not ready.<br/>Click here to change.</div>
+			<div id="countdown_ready">Get prepared! Ready!</div>
+			<div id="countdown_steady">Steady !</div>
+			<div id="countdown_go">Go !</div>
+			<div id="podium"></div>
+			{% include "minigame/main.html" %}
+		</div>
+		
+		<div id="racetrack">
+			<table id="racetrack_table" width="85%">
+				{% for runner in runners %}
+					{% include "show-race-player.html" %}
+				{% endfor %}
+			</table>
+		</div>
+		
+		{% include "show-race-share.html" %}
+		
+		<div id="action_bar">&copy;&nbsp;Calamidad&nbsp;2011</div>
+	</body>
+</html>

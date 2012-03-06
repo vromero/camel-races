@@ -1,0 +1,24 @@
+application: camelraces
+version: 1
+runtime: python
+api_version: 1
+
+
+handlers:
+- url: /stylesheets
+  static_dir: static/stylesheets
+
+- url: /images
+  static_dir: static/images
+  
+- url: /scripts
+  static_dir: static/scripts
+    
+- url: /rest/.*
+  script: rest.py
+
+- url: /.*
+  script: web.py
+
+inbound_services:
+- channel_presence

@@ -1,0 +1,21 @@
+
+#playarea {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: #ECECEC;
+	background-image:url('/images/minigame/background.jpeg');
+	position: relative;
+}
+
+input {
+	width: 250px;
+	margin-top: 2px;
+}
+
+#info {
+	width: 378px;
+	background-color: #FFFFFF;
+	padding: 10px;
+}
+

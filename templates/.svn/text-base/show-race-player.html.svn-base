@@ -1,0 +1,19 @@
+{% if runner.runner_visible %}
+<tr id="{{runner.runner_key}}" width="90%" style="{display : table-row}">
+{% else %}
+<tr id="{{runner.runner_key}}" width="90%" style="{display : none}">
+{% endif %}
+	<td width=120>
+		
+	{% if runner.runner_visible %}
+		<div id="{{runner.runner_key}}-name" width="120px">{{runner.runner_name}}</div></td>
+	{% else %}
+		<div style="{font-weight: bolder}" id="{{runner.runner_key}}-name">{{runner.runner_name}}</div></td>
+	{% endif %}
+	
+	<td width="100%" class="camel_track">
+		<div id="{{runner.runner_key}}-progress" class="runner1-camel" />
+	</td>
+</tr>
+
+<div id="new_runner" ></div>
